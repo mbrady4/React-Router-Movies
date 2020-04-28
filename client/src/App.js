@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
@@ -35,7 +35,7 @@ const App = () => {
              render={(props) => <MovieList movies={movieList} />}
       />
       <Route path='/movies/:id'
-            render={(props) => <Movie id={props}/>}
+            render={(props) => <Movie id={props} save={addToSavedList}/>}
       />
     </div>
   );
